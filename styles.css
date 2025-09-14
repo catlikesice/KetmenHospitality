@@ -1,6 +1,3 @@
-/* Central Asian / Ketmen Ridge Inspired Stylesheet */
-
-/* Color Palette */
 :root {
   --ca-bg: #f6ede2;
   --ca-accent1: #bb4e13; /* Terracotta */
@@ -8,147 +5,141 @@
   --ca-accent3: #e2b13c; /* Gold */
   --ca-accent4: #3a3e6e; /* Deep blue */
   --ca-accent5: #b8a17f; /* Light brown/sand */
+  --ca-green1: #588c53;  /* Ridge forest green */
+  --ca-green2: #8aca7b;  /* Ridge grass green */
+  --ca-green3: #edf7ef;  /* Pale green bg */
 }
 
+/* Background and Typography */
 body {
   font-family: 'Georgia', 'Times New Roman', Times, serif;
-  background: var(--ca-bg) url("data:image/svg+xml;utf8,<svg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'><rect width='40' height='40' fill='%23f6ede2'/><path d='M20 0L24 8L32 10L24 12L20 20L16 12L8 10L16 8L20 0Z' fill='%23bb4e13' opacity='0.14'/><circle cx='20' cy='20' r='5' fill='%23197e7e' opacity='0.15'/></svg>") repeat;
+  background: var(--ca-green3);
   margin: 0;
   padding: 0;
-  color: #302a22;
+  color: #263318;
 }
 
-/* Ornate Header */
-header, .main-header {
-  background: linear-gradient(90deg, var(--ca-accent2) 0%, var(--ca-accent1) 100%);
+/* Header */
+header.main-header {
+  background: var(--ca-green1);
   color: #fff;
-  padding: 2rem 1rem 1rem 1rem;
+  padding: 2.5rem 1rem 1.5rem 1rem;
   text-align: center;
   border-bottom: 8px solid var(--ca-accent3);
-  border-image: repeating-linear-gradient(
-    to right,
-    var(--ca-accent3) 0 14px,
-    var(--ca-accent4) 14px 28px
-  ) 8;
-  letter-spacing: 2px;
-  box-shadow: 0 4px 12px rgba(58,62,110,0.08);
+  letter-spacing: 1px;
+  box-shadow: 0 4px 12px rgba(58,62,110,0.07);
 }
-
-h1, h2, h3 {
-  font-family: 'Georgia', 'Times New Roman', Times, serif;
-  text-shadow: 1px 1px 0 var(--ca-accent5), 2px 2px 0 var(--ca-accent3);
-  margin-top: 0.5em;
-}
-
-h1 {
+header.main-header h1 {
+  margin: 0 0 0.3em 0;
   font-size: 2.6em;
   font-weight: bold;
-  color: var(--ca-accent4);
-}
-
-h2 {
-  font-size: 1.6em;
-  color: var(--ca-accent1);
-  border-bottom: 2px solid var(--ca-accent3);
-  display: inline-block;
-  padding-bottom: 3px;
-  margin-bottom: 16px;
-}
-
-/* Central Asian Motif Divider */
-.divider {
-  width: 100%;
-  height: 32px;
-  margin: 24px 0;
-  background: url("data:image/svg+xml;utf8,<svg width='320' height='32' viewBox='0 0 320 32' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0 16 Q40 0 80 16 Q120 32 160 16 Q200 0 240 16 Q280 32 320 16' stroke='%23bb4e13' stroke-width='4' fill='none'/><circle cx='40' cy='16' r='6' fill='%23e2b13c'/><circle cx='120' cy='16' r='6' fill='%23197e7e'/><circle cx='200' cy='16' r='6' fill='%23e2b13c'/><circle cx='280' cy='16' r='6' fill='%23197e7e'/></svg>");
-  background-repeat: repeat-x;
-  background-size: contain;
-}
-
-/* Button Style */
-button, .btn {
-  background: linear-gradient(90deg, var(--ca-accent4), var(--ca-accent2));
   color: #fff;
-  border: 2px solid var(--ca-accent3);
-  border-radius: 18px;
-  font-size: 1.1em;
-  padding: 0.7em 2em;
+  text-shadow: 1px 2px 0 var(--ca-accent5), 2px 3px 0 var(--ca-accent1);
+}
+header.main-header p {
+  margin: 0;
+  font-size: 1.16em;
+}
+
+/* Hero Section */
+.hero-section {
+  background: var(--ca-green2);
+  padding: 2.5em 0 2.5em 0;
+  box-shadow: 0 3px 16px rgba(58,62,110, 0.07);
+  border-radius: 0 0 18px 18px;
+  text-align: center;
+}
+.hero-section h2 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  color: var(--ca-green1);
+  font-weight: bold;
+}
+.hero-section p {
+  font-size: 1.18em;
+  color: #263318;
+  margin-bottom: 2em;
+}
+
+.btn, button {
+  background: var(--ca-green1);
+  color: #fff;
+  border: none;
+  border-radius: 32px;
+  font-size: 1.15em;
+  font-weight: bold;
+  padding: 0.7em 2.2em;
   margin: 1em 0;
   cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
-  box-shadow: 0 2px 8px rgba(32,42,64,0.07);
-  font-family: 'Georgia', serif;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 3px 12px rgba(58,62,110,0.10);
+  font-family: inherit;
+}
+.btn:hover, button:hover {
+  background: var(--ca-accent1);
+  color: #fff;
+  transform: translateY(-2px) scale(1.03);
 }
 
-button:hover, .btn:hover {
-  background: linear-gradient(90deg, var(--ca-accent1), var(--ca-accent3));
-  color: var(--ca-accent4);
-  transform: translateY(-2px) scale(1.04);
+/* Main Content */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.2em 2.5em 1.2em;
 }
 
-/* Card with Decorative Border */
-.card {
+.booking-intro {
+  margin: 2.5em 0 1.5em 0;
   background: #fff;
-  margin: 2em auto;
-  max-width: 600px;
-  border: 4px double var(--ca-accent2);
+  border-radius: 16px;
+  padding: 2em 1.5em;
+  box-shadow: 0 2px 12px rgba(187,78,19,0.06);
+  text-align: left;
+}
+.booking-intro h2 {
+  margin-top: 0;
+  color: var(--ca-green1);
+  font-size: 2em;
+  font-weight: bold;
+}
+.booking-intro p {
+  font-size: 1.13em;
+  margin-bottom: 1.5em;
+}
+
+/* Features Section */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center;
+  margin-top: 2em;
+}
+.feature-card {
+  flex: 1 1 280px;
+  min-width: 280px;
+  max-width: 340px;
+  background: #f6ede2;
+  border: 3.5px double var(--ca-accent2);
   border-radius: 18px;
   box-shadow: 0 8px 24px rgba(187,78,19,0.06);
-  padding: 2em;
+  padding: 2em 1.3em 1.5em 1.3em;
+  margin-bottom: 1.2em;
   position: relative;
   overflow: hidden;
 }
-.card::before, .card::after {
-  content: '';
-  position: absolute;
-  width: 64px;
-  height: 64px;
-  background-repeat: no-repeat;
-  opacity: 0.16;
-  z-index: 0;
-}
-.card::before {
-  top: -16px;
-  left: -16px;
-  background-image: url("data:image/svg+xml;utf8,<svg width='64' height='64' xmlns='http://www.w3.org/2000/svg'><polygon points='32,0 40,24 64,32 40,40 32,64 24,40 0,32 24,24' fill='%23197e7e'/></svg>");
-}
-.card::after {
-  bottom: -16px;
-  right: -16px;
-  background-image: url("data:image/svg+xml;utf8,<svg width='64' height='64' xmlns='http://www.w3.org/2000/svg'><polygon points='32,0 40,24 64,32 40,40 32,64 24,40 0,32 24,24' fill='%23bb4e13'/></svg>");
-}
-
-/* Decorative List Style */
-ul.pattern-list {
-  list-style: none;
-  padding: 0;
-  margin: 1em 0;
-}
-ul.pattern-list li {
-  padding-left: 2.2em;
-  margin: 0.7em 0;
-  position: relative;
-  font-size: 1.08em;
-}
-ul.pattern-list li:before {
-  content: '';
-  position: absolute;
-  left: 0.4em;
-  top: 0.2em;
-  width: 1.2em;
-  height: 1.2em;
-  background: url("data:image/svg+xml;utf8,<svg width='16' height='16' xmlns='http://www.w3.org/2000/svg'><polygon points='8,0 11,6 16,8 11,10 8,16 5,10 0,8 5,6' fill='%23e2b13c'/></svg>") no-repeat center center / contain;
-}
-
-/* Links */
-a {
+.feature-card h3 {
   color: var(--ca-accent2);
-  text-decoration: underline dotted var(--ca-accent3) 2px;
-  transition: color 0.2s;
+  font-size: 1.28em;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0.8em;
+  letter-spacing: 0.5px;
 }
-a:hover, a:focus {
-  color: var(--ca-accent1);
-  text-decoration: underline solid var(--ca-accent1) 2px;
+.feature-card p {
+  font-size: 1.08em;
+  color: #3a3e6e;
+  margin: 0;
 }
 
 /* Footer */
@@ -156,9 +147,21 @@ footer {
   background: var(--ca-accent1);
   color: #fff;
   text-align: center;
-  padding: 1em 0;
+  padding: 1.1em 0;
   border-top: 6px solid var(--ca-accent2);
-  font-size: 1.02em;
+  font-size: 1.05em;
   letter-spacing: 1px;
   box-shadow: 0 -2px 8px rgba(58,62,110,0.08);
+  margin-top: 2em;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+  main {
+    padding: 0 0.5em 2.5em 0.5em;
+  }
 }
